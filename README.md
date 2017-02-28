@@ -2,6 +2,10 @@
 
 A simple node app to help you monitor and analyse your server logs
 
+## The UI
+
+![BeatBox UI](https://raw.githubusercontent.com/jjcosgrove/beatbox/gh-pages/images/beatbox_ui.jpg)
+
 ## Quickstart
 
 ### 1. Clone
