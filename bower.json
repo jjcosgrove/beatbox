@@ -1,0 +1,29 @@
+{
+  "name": "BeatBox",
+  "version": "1.0.0",
+  "description": "A simple node app to help you monitor and analyse your server logs",
+  "authors": [
+    "Jonathan James Cosgrove <jjcosgrove.inbox@gmail.com> (http://www.jjcosgrove.com)"
+  ],
+  "homepage": "https://jjcosgrove.github.io/beatbox/",
+  "main": "app.js",
+  "keywords": [
+    "beatbox",
+    "express",
+    "filebeat",
+    "logs",
+    "logstash",
+    "node",
+    "mongodb"
+  ],
+  "private": true,
+  "dependencies": {
+    "datatables-scroller": "^1.4.2",
+    "jquery": "2.2.4",
+    "moment": "^2.17.1",
+    "normalize-css": "normalize.css#^5.0.0",
+    "nouislider": "^9.2.0",
+    "socket.io-client": "^1.7.2",
+    "wnumb": "^1.1.0"
+  }
+}

@@ -1,0 +1,20 @@
+# main BeatBox settings
+bb_host                 : 127.0.0.1
+bb_port                 : 9999
+
+# filebeat/logstash timestamp field. must be ISO8601/moment() friendly
+# i suggest you leave this as it, during initial testing. it is used
+# to calculate 'epoch' which is in turn used for all UI timescaling/queries...
+bb_beat_timestamp_field : @timestamp
+
+# front-end/ui
+bb_ui_date_format       : DD-MMM-Y  # via moment()
+bb_ui_available_range   : 30        # days (or all available, whichever is smallest)
+bb_ui_initial_range     : 3         # days (or all available, whichever is smallest)
+bb_ui_beat_direction    : -1        # -1 = age ascending (newest at top), 1 = age descending (oldest at top)
+
+# mongodb
+bb_mongo_host           : 127.0.0.1
+bb_mongo_port           : 27017
+bb_mongo_db             : beatbox
+bb_mongo_db_collection  : beats

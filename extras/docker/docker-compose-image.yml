@@ -1,0 +1,43 @@
+version: '2.1'
+
+services:
+    web:
+        image: jjcosgrove/beatbox:latest
+        environment:
+            - BB_HOST=127.0.0.1
+            - BB_PORT=9999
+            - BB_MONGO_HOST=mongo
+            - BB_MONGO_PORT=27017
+            - BB_MONGO_DB=beatbox
+            - BB_MONGO_DB_COLLECTION=beats
+        links:
+            - mongo:mongo
+        ports:
+            - "9999:9999"
+        expose:
+            - "9999"
+
+    mongo:
+        image: "mongo:latest"
+        build:
+            context: ./../../
+        ports:
+            - "27017:27017"
+        expose:
+            - "27017"
+        volumes:
+            - ./../../mongo:/data/db
+
+    logstash:
+        image: "logstash:latest"
+        build:
+            context: ./../../
+        ports:
+            - "9300:9300"
+        expose:
+            - "9300"
+        command: -f /config/logstash.conf
+        links:
+            - web:beatbox
+        volumes:
+            - ./../logstash:/config

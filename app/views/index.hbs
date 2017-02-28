@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" type="text/css">
+        <link rel="stylesheet" href="components/normalize-css/normalize.css" type="text/css">
+        <link rel="stylesheet" href="components/nouislider/distribute/nouislider.min.css" type="text/css">
+        <link rel="stylesheet" href="css/styles.min.css" type="text/css">
+        <script src="components/jquery/dist/jquery.min.js"></script>
+        <script src="components/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="components/datatables-scroller/js/dataTables.scroller.js"></script>
+        <script src="components/socket.io-client/dist/socket.io.slim.js"></script>
+        <script src="components/nouislider/distribute/nouislider.min.js"></script>
+        <script src="components/moment/min/moment-with-locales.min.js"></script>
+        <script src="components/wnumb/wNumb.js"></script>
+        <script src="js/scripts.min.js"></script>
+        <script>
+            // socket.io settings
+            // from node server
+            window.bbSocketIOConfig = {
+                host: "{{ host }}",
+                port: "{{ port }}"
+            };
+        </script>
+        <title>BeatBox</title>
+    </head>
+    <body>
+        <div id="info">
+            <div id="status">
+                Status: <span id="current-status"></span>
+            </div>
+            <div id="stats">
+                Stats:
+                <div class="stat"><span id="node-count" class="count">0</span> Nodes</div>
+                <div class="stat"><span id="stream-count" class="count">0</span> Streams</div>
+                <div class="stat"><span id="message-count" class="count">0</span> Messages</div>
+            </div>
+        </div>
+        <div id="controls">
+            <div id="timeline"></div>
+            <div id="timeline-message">Dates: <span id="start-date">01-01-2017</span> &#61;&gt; <span id="end-date">01-01-2017</span></div>
+        </div>
+        <div id="console">
+            <table id="table" class="display nowrap" cellspacing="0" width="100%"></table>
+        </div>
+        <div id="footer">
+            <div id="items">
+                <div class="item"><label id="timer">Runtime: <span id="runtime">00:00:00</span></label></div>
+                <div class="item"><p id="message"><a class="link" href="http://jjcosgrove.github.io/beatbox/" target="_blank">BeatBox</a> - Developed by <a class="link" href="https://www.jjcosgrove.com/" target="_blank">Jonathan James Cosgrove</a></p></div>
+                <div class="item"><input id="search" placeholder="Search"></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,232 @@
+// BeatBox UI colours
+$bb-ui-color-black: #000;
+$bb-ui-color-white: #fff;
+
+$bb-ui-color-background: #232323;
+$bb-ui-color-info-background: $bb-ui-color-black;
+
+$bb-ui-color-text: $bb-ui-color-white;
+
+$bb-ui-color-beattime: #ff0;
+$bb-ui-color-node: #1f77b4;
+$bb-ui-color-stream: #ff7f0e;
+$bb-ui-color-message: #73ca73;
+
+$bb-ui-color-timeline: #1f77b4;
+
+// main SCSS
+html,
+body {
+  background-color: $bb-ui-color-background;
+  font-family: 'Inconsolata', Courier, sans-serif;
+  font-size: 14px;
+  height: 100%;
+  margin: 0;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+#info {
+  background-color: $bb-ui-color-info-background;
+  color: $bb-ui-color-text;
+  float: left;
+  width: 100%;
+
+  #status {
+    display: inline-block;
+    float: left;
+    font-size: .8em;
+    padding: 10px;
+  }
+
+  #stats {
+    display: inline-block;
+    float: right;
+    font-size: .8em;
+
+    .stat {
+      display: inline-block;
+      padding: 10px;
+
+      .count {
+        padding: 10px;
+      }
+
+      #node-count {
+        background-color: $bb-ui-color-node;
+      }
+
+      #stream-count {
+        background-color: $bb-ui-color-stream;
+      }
+
+      #message-count {
+        background-color: $bb-ui-color-message;
+      }
+    }
+  }
+}
+
+#controls {
+  clear: both;
+  color: $bb-ui-color-text;
+  padding: 15px 50px;
+
+  #timeline {
+    margin: 6px 0;
+  }
+
+  #timeline-message {
+    font-size: .8em;
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+#console {
+  font-weight: 400;
+
+  .line {
+    padding: 0 10px;
+
+    .beattime {
+      color: $bb-ui-color-beattime;
+      padding: 0 5px 0 0;
+    }
+
+    .node {
+      color: $bb-ui-color-node;
+      padding: 0 5px 0 0;
+    }
+
+    .stream {
+      color: $bb-ui-color-stream;
+      padding: 0 5px 0 0;
+    }
+
+    .message {
+      color: $bb-ui-color-message;
+    }
+  }
+}
+
+#footer {
+  background-color: $bb-ui-color-black;
+  bottom: 0;
+  height: 32px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+#items {
+  color: $bb-ui-color-white;
+  display: table;
+  font-size: .8em;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  .item {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+
+    &:nth-child(1) {
+      width: 125px;
+    }
+    &:nth-child(2) {
+      width: auto;
+    }
+    &:nth-child(3) {
+      width: 150px;
+    }
+  }
+}
+
+#timer {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+#message {
+  margin: 0;
+  text-align: center;
+
+  .link {
+    color: $bb-ui-color-white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+#search {
+  margin: 7px 9px;
+}
+
+.hidden {
+  display: none;
+}
+
+// noUiSlider overrides
+.noUi-horizontal {
+  height: 6px;
+}
+
+.noUi-horizontal {
+  .noUi-handle {
+    height: 16px;
+  }
+}
+
+.noUi-handle:after,
+.noUi-handle:before {
+  top: 1px;
+}
+
+.noUi-connect {
+  background: $bb-ui-color-timeline;
+}
+
+// dataTables overrides
+table {
+  color: $bb-ui-color-text;
+}
+
+table.dataTable {
+  thead {
+    th {
+      text-align: left;
+    }
+  }
+}
+
+table.dataTable {
+  tbody {
+    td {
+      vertical-align: top;
+    }
+  }
+}
+
+table.dataTable {
+  tbody {
+    td {
+      &.beattime,
+      &.node,
+      &.stream {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+table.dataTable {
+  .dataTables_empty {
+    text-align: center;
+  }
+}

@@ -1,0 +1,11 @@
+.git
+.gitignore
+.filebeat
+bower_components
+docker-compose.yml
+extras
+mongo
+node_modules
+npm-debug.log
+web/css/
+web/js/

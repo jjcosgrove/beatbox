@@ -1,0 +1,7 @@
+.filebeat
+bower_components
+mongo
+node_modules
+npm-debug.log
+web/css/
+web/js/
